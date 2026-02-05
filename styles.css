@@ -1,17 +1,175 @@
-*{
- margin: 0; /* Remover as margens padrão do navegador */
-       padding: 0; /* Remover o preenchimento padrão do navegador */
-       box-sizing: border-box; /* Garante que bordas não aumentem o tamanho total dos elementos */
- font-family: Arial, Helvetica, sans-serif;
+*
+{
+    margin: 0; /* Remover as margens padrão do navegador */
+    padding: 0; /* Remover o preenchimento padrão do navegador */
+    box-sizing: border-box; /* Garante que bordas não aumentem o tamanho total dos elementos */
+    font-family: Arial, Helvetica, sans-serif;
 }
+
 /*Estilizar a barra de navegação*/
+
 .navbar 
 {
-     background-color: black;
-        color:antiquewhite;
-            display: flex;
-                justify-content: space-between;
-            align-items: center;
-        padding: 10px 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: rgb(253, 245, 245);
+    color:rgb(181, 173, 164);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
+
+.navbar ul
+
+{
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar ul li a
+
+{
+    color: rgb(195, 189, 189);
+    text-decoration: none;
+    padding: 10px 20px;
+    display: block;
+    border-radius: 5px;
+    transition: 0.4s;
+
+}
+
+.navbar ul li a:hover 
+
+{
+    background-color: rgb(228, 216, 216); /*adiciona um fundo branco*/
+    color:rgb(83, 80, 80); /*adiciona uma cor diferente ao texto*/
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /*adiciona uma cor diferente ao texto*/
+    /*0px -> move na horizontal
+    4px -> move na vertical
+    10px -> desfoque de 10px na sombra
+    rgba(0, 0, 0, 0.3) -> adiciona a cor preta e uma transparência de 30%(0.3)
+    */
+    transform: translateY(-2px);
+   
+}
+
+/*Conteiner que limita o tamanho do carrosel*/
+
+.slider
+
+{
+    margin: 20px auto; /*Centralizar na tela e a margem no topo*/
+    width: 800px; /*Largura do carrosel*/
+    height: 400px; /*Altura do carrosel*/
+    overflow: hidden; /*Esconder o que estibver fora da caixa (as outras fotos)*/
+    border-radius: 10px; /*Deixar as bordas arredondadas*/
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); /*adiciona uma sombra para dar profundidade*/
+
+
+}
+
+.slider-content
+
+{
+    width: 400%; 
+    height: 100%; /*ocupa 100% da altura do objeto "pai"*/
+    display: flex; /*Coloca as imagens ao lado da outra*/
+}
+
+/*Esconde os botões orginais*/
+
+.slider-content input 
+
+{
+
+    display: none; /*esconde os botões do RADIO */
+}
+
+/*estiliza de cada caixa de imagem*/
+
+.slide-box 
+
+{
+    width:25%; /*cada foto ocupa 25% do espaço total (4 fotos = 100%)*/
+    transition: 0.6s; /*transição ao trocar de imagem*/
+
+}
+
+/*garante que a imagem ocupe todo o espaço sem distorcer*/
+
+.slide-box img 
+
+{
+    width: 800px; /*largura para manter o padrão*/
+    height: 400px; /*altura para manter o padrão*/
+    object-fit: cover; /*corta a imagem sem distorcer*/
+
+}
+
+/*lógica de movimento: ajudtado p/ 4 imagens*/
+
+/* imagem 1: margem 0%*/
+
+#radio1:checked ~ .first 
+
+{
+    margin-left: 0;
+}
+
+/* imagem 2: pula a primeira imagem (25%)*/
+
+#radio2:checked ~ .first 
+
+{
+    margin-left: -25%;
+}
+
+/* imagem 3: pula a segunda imagem (50%)*/
+
+#radio3:checked ~ .first 
+
+{
+    margin-left: -50%;
+}
+
+/* imagem 4: pula a terceira imagem (75%)*/
+
+#radio4:checked ~ .first 
+
+{
+    margin-left: -75%;
+}
+
+/*Estiliza os botões de navegação*/
+
+.nav-manual
+
+{
+    position: absolute; /*posicionamento fixo em relação ao slider*/
+    width: 800px; /* mesma largura do slider*/
+    margin-top: -40px; /*jogando as bolinhas p/ dentro da imagem*/
+    display: flex; 
+    justify-content: center; /*centraliza as bolinhas horizontalmente*/
+
+}
+
+.manual-btn 
+
+{
+    border: 2px solid white; /*borda branca p/ visibilidade*/
+    padding: 5px; /*tamanho da bolinha*/
+    border-radius: 10px; /*deixa a bolinha redonda*/
+    cursor: pointer; /*vira uma mãozinha ao passar o mouse*/
+    margin-left: 10px; /*espaçamento entre as bolinhas*/
+    transition: 0.3s; /*suaviza a mudança de cor no hover*/
+
+}
+
+.manual-btn:hover 
+
+{
+    background-color: white;
+}
+
