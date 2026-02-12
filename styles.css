@@ -173,3 +173,14 @@
     background-color: white;
 }
 
+/*Aula dia 11/02 Estilização do rodapé*/
+
+.rodape-principal 
+
+{
+    background-color: #000 /*cor do fundo*/;
+    color: white; /*cor das letras*/
+    padding: 40px 0 20px 0;
+    margin-top: 50px; /*afastar da galeria*/
+}
+
