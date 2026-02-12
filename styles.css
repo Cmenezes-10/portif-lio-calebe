@@ -66,6 +66,7 @@
     overflow: hidden; /*Esconder o que estibver fora da caixa (as outras fotos)*/
     border-radius: 10px; /*Deixar as bordas arredondadas*/
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); /*adiciona uma sombra para dar profundidade*/
+    position: relative;
 
 
 }
@@ -147,12 +148,13 @@
 .nav-manual
 
 {
-    position: absolute; /*posicionamento fixo em relação ao slider*/
+    
     width: 800px; /* mesma largura do slider*/
+    bottom: 15px;
     margin-top: -40px; /*jogando as bolinhas p/ dentro da imagem*/
     display: flex; 
     justify-content: center; /*centraliza as bolinhas horizontalmente*/
-
+    position: absolute; /*posição absoluta p/ ficar em cima da imagem*/
 }
 
 .manual-btn 
@@ -175,12 +177,57 @@
 
 /*Aula dia 11/02 Estilização do rodapé*/
 
-.rodape-principal 
-
+.rodape-principal
 {
-    background-color: #000 /*cor do fundo*/;
-    color: white; /*cor das letras*/
+    background-color: rgb(253, 245, 245); /* igual navbar */
+    color: rgb(181, 173, 164); /* igual navbar */
     padding: 40px 0 20px 0;
-    margin-top: 50px; /*afastar da galeria*/
+    margin-top: 50px;
 }
 
+/*aula dia 12/02 Estilização dos links*/
+
+.container-rodape{
+    display: flex; /*Usar flexbox para organizar o conteúdo*/
+    justify-content: space-around;
+    align-items: center; /*Alinha os itens verticalmente*/
+    flex-wrap: wrap; /*Permite que os itens quebrem para a próxima linha se necessário*/
+    max-width: 1200px; /*Limita a largura do rodapé para melhor leitura*/
+    margin: 0 auto; /*Centraliza o rodapé horizontalmente*/
+}
+
+.links-sociais a 
+{
+    color: rgb(181, 173, 164); /* igual navbar */
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.links-sociais a:hover
+{
+    background-color: rgb(228, 216, 216);
+    color: rgb(127, 122, 122);
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+.rodape-inferior 
+{
+    text-align: center; /*centraliza o texto*/
+    border-top: 1px solid #000000; /*adiciona uma linha fina para separar o rodapé inferior do principal*/
+    margin-top: 30px; /*afasta o rodapé inferior do principal*/
+    padding-top: 20px; /*adiciona espaço acima do texto do rodapé inferior*/
+    font-size: 12px; /*diminui o tamanho da fonte para o rodapé inferior*/
+    opacity: 0.6; /*adiciona transparência ao rodapé inferior*/
+}
+
+body /*estiliza o fundo da página*/
+{
+    background-image: url("C:/Users/aluno/Documents/HTML page/gaming-wallpapers-3840-x-2160-uhd-v0-fr4m7cy20whd1.jpg"); /*caminho da imagem de fundo*/
+    background-size: cover; /*faz a imagem de fundo cobrir toda a tela*/
+    background-attachment: fixed; /*faz a imagem de fundo ficar fixa ao rolar a página*/
+    background-repeat: no-repeat; /*impede que a imagem de fundo se repita*/
+    background-position: center; /*centraliza a imagem de fundo*/
+    background-color: rgb(243, 237, 237); /*cor de fundo para o caso da imagem não carregar*/
+}
