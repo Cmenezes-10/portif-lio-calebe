@@ -10,7 +10,7 @@ setInterval(function() {
 function proxImg() {
     //toda vez que a função roda, somamos + 1 ao contador para ir p/ próxima imagem//
     contador++;
-    //Lógica de repetição, como agora usamos 4 imagens, reiniciamos p/ 1 e o carrossel voltará p/ o início (loop)//
+    //Lógica de repetição, como agora usamos fftdftffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffdtdtttddddtf4 imagens, reiniciamos p/ 1 e o carrossel voltará p/ o início (loop)//
     if (contador > 4) {
         contador = 1;
     }
